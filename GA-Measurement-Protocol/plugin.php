@@ -46,7 +46,7 @@ function file_get_contents_curl($url) {
 }
   
     function power_ga_mp_UUID() {
-    $uuid = md5($_SERVER['REMOTE_ADDR'].$_SERVER['HTTP_USER_AGENT']);
+    $uuid = md5($_SERVER["HTTP_CF_CONNECTING_IP"].$_SERVER['HTTP_USER_AGENT']);
     $uuid = substr($uuid, 0, 8 ) .'-'.
     substr($uuid, 8, 4) .'-'.
     substr($uuid, 12, 4) .'-'.
@@ -67,7 +67,7 @@ function power_ga_mp($keyword, $title = '(unknown)', $referer = '') {
             'v' => $version,
             'tid' => $power_ga_mp_GAID,
             'cid' => power_ga_mp_gaParseCookie(),
-            'uip' => $_SERVER['REMOTE_ADDR'],
+            'uip' => $_SERVER["HTTP_CF_CONNECTING_IP"], //$_SERVER['REMOTE_ADDR'],
             'z' => $z,
             't' => 'pageview',
             'dh' => $_SERVER['SERVER_NAME'],
