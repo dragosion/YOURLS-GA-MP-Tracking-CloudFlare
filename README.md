@@ -2,6 +2,7 @@ YOURLS-GA-MP-Tracking
 ====================
 
 Track YOURLS link clicks with Google Analytics Measurement protocol in Real Time
+
 This mod is made to work with ClodFlare CDN where the IP of the visitor is kept in another server variable.
 
 YOURLS.org is the best custom URL shortener script in PHP. YOURLS has many useful plugins. I've built this plugin to track link clicks in real time with Google Analytics. There are already a few plugins available for this purpose, but unfortunately they are not working. So I've built my own. It is working perfectly.
